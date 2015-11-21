@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="2.3" package="org.example.geocoder-demo" version="1.0.0">
+	<profile name="mobile" />
+	<ui-application appid="org.example.geocoder-demo" exec="geocoder-demo" type="capp" multiple="false" taskmanage="true" nodisplay="false" launch_mode="single">
+		<icon>geocoder-demo.png</icon>
+		<label>geocoder-demo</label>
+	</ui-application>
+</manifest>
