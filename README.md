@@ -8,6 +8,13 @@ Screen shots
 
 <img src="https://github.com/shulgaalexey/geocoder/blob/master/doc/set_privileges.png" alt="Set Privileges" style="wi    dth:500px"/>
 
+
+Network Requiements
+-------------------
+
+Be sure your deveice/emulator have a valid internet connection.
+
+
 Code snippets
 -------------
 
