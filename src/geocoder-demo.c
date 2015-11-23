@@ -66,21 +66,25 @@ static bool
 geocode_cb(maps_error_e result, int request_id, int index, int total,
                           maps_coordinates_h coordinates, void* user_data)
 {
+   /* Get latitude and longitude of the geocode */
    double latitude = .0;
    double longitude = .0;
    maps_coordinates_get_latitude(coordinates, &latitude);
    maps_coordinates_get_longitude(coordinates, &longitude);
-
-   char geocode[0x40] = {0};
-   snprintf(geocode, 0x40, "Geocode is: (%f, %f)", latitude, longitude);
-
+   
+   /* Output the geocode */
+   char geocode[64] = {0};
+   snprintf(geocode, 64, "Geocode is: (%f, %f)", latitude, longitude);
    appdata_s *ad = user_data;
    elm_object_text_set(ad->label, geocode);
-
-   // Release the results
+   
+   /* Don't forget to release the coordinates handle */
    maps_coordinates_destroy(coordinates);
-
-   return true;
+   
+   /* If return true, we will receive other geocodes,
+   * of the address we put to the Geocoder request.
+   * In this example, one geocode is enough for us. */
+   return false;
 }
 
 static bool
@@ -101,9 +105,9 @@ app_create(void *data)
 	/* Set Maps Provider Key */
 	maps_service_set_provider_key(ad->maps, "your-provider-key");
 
-	/* Run Geocoder */
+	/* Use Geocoder API */
 	int request_id = 0;
-	maps_service_geocode(ad->maps, "Moscow Bolshoi", NULL, geocode_cb, ad, &request_id);
+	maps_service_geocode(ad->maps, "Moscow Bolshoi Theatre", NULL, geocode_cb, ad, &request_id);
 
 	return true;
 }
