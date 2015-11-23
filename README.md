@@ -1,20 +1,20 @@
-# How to use Tizen Native Geocoder API in 3 simple steps
+# How to use Tizen Native Geocode API in 3 simple steps
 
-*The following assumes that you have already basic knowledge in Tizen development:* https://developer.tizen.org/development/getting-started/preface 
+*The following assumes that you have already basic knowledge in Tizen development:* https://developer.tizen.org/development/getting-started/preface
 
 
 
 
 **Geocoder** converts the place address into its geographical coordinates.
 
-Geocoder API is one of Maps Services, provided by Tizen Native Location Framework.
-<img src="https://github.com/shulgaalexey/geocoder/blob/master/doc/geocoder_api.png" alt="Tizen Natice Geocoder API" style="width:500px"/>
+Geocode API is one of Maps Services, provided by Tizen Native Location Framework.
+<img src="https://github.com/shulgaalexey/geocoder/blob/master/doc/maps_service.png" alt="Tizen Native Geocoder API" style="width:500px"/>
 
-To start using Geocoder API we are going to:
+To start using Geocode API we are going to:
 
 1.	Create empty Tizen Native Application
 2.	Start Maps Service
-3.	Run Geocoder
+3.	Run Geocode
 
 
 
@@ -31,7 +31,7 @@ In the IDE create an empty Application and run it (on Emulator or Device)
 
 <img src="https://github.com/shulgaalexey/geocoder/blob/master/doc/create_empty_prj.png" alt="Create Empty Tizen Native Project" style="width:500px"/>
 
-When the app started, the "Hello Tizen" label should appear.
+When the application started, the "Hello Tizen" label should appear.
 
 NOTE: Get familiar with instructions how to create an empty Application on the page https://developer.tizen.org/development/ -> "Native Application" -> "Creating Your First Tizen Application"
 
@@ -88,18 +88,18 @@ app_terminate(void *data)
 }
 ```
 
-Add privileges, required for Maps Service API: 
+Add privileges, required for Maps Service API:
 
  * mapservice
  * internet
  * network.get
 
- 
+
 <img src="https://github.com/shulgaalexey/geocoder/blob/master/doc/set_privileges.png" alt="Set Privileges" style="width:500px"/>
 
 
-## 3. Run Geocoder
-Add Geocoder request into the app_create() function:
+## 3. Run Geocode
+Add Geocode request into the app_create() function:
 
 ```C
 /* Use Geocoder API */
@@ -107,7 +107,7 @@ int req_id = 0;
 maps_service_geocode(ad->maps, "Moscow Bolshoi Theatre", NULL, geocode_cb, ad, &req_id);
 ```
 
-Implement Geocoder callback:
+Implement Geocode callback:
 
 ```C
 static bool
