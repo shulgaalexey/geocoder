@@ -39,7 +39,7 @@ NOTE: Get familiar with instructions how to create an empty Application on the p
 ## 2. Start Maps Service
 Include the Maps Service API header file:
 
-```
+```C
 #include <maps_service.h>
 ```
 
@@ -47,7 +47,7 @@ NOTE: This allows using all Native Maps Service API. For more details visit http
 
 Add a Maps Service handle to the appdata_s structure:
 
-```
+```C
 typedef struct appdata {
 	Evas_Object *win;
 	Evas_Object *conform;
@@ -58,7 +58,7 @@ typedef struct appdata {
 
 Create an instance of Maps Service API in the app_create() function:
 
-```
+```C
 static bool
 app_create(void *data)
 {
@@ -78,7 +78,7 @@ app_create(void *data)
 
 Release The Maps Service in app_terminate() function:
 
-```
+```C
 static void
 app_terminate(void *data)
 {
@@ -101,7 +101,7 @@ Add privileges, required for Maps Service API:
 ## 3. Run Geocoder
 Add Geocoder request into the app_create() function:
 
-```
+```C
 /* Use Geocoder API */
 int req_id = 0;
 maps_service_geocode(ad->maps, "Moscow Bolshoi Theatre", NULL, geocode_cb, ad, &req_id);
@@ -109,7 +109,7 @@ maps_service_geocode(ad->maps, "Moscow Bolshoi Theatre", NULL, geocode_cb, ad, &
 
 Implement Geocoder callback:
 
-```
+```C
 static bool
 geocode_cb(maps_error_e result, int request_id, int index, int total, maps_coordinates_h coordinates, void *user_data)
 {
@@ -141,5 +141,4 @@ At first we will see familiar "Hello Tizen" line, but in a couple of moments it 
 
 
 ## Reference
----------
 https://developer.tizen.org/development/tutorials/native-application/location/maps-service#geocode
