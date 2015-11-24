@@ -2,13 +2,17 @@
 
 *The following assumes that you have already basic knowledge in Tizen development:* https://developer.tizen.org/development/getting-started/preface
 
+*Since Tizen 2.4*
+
 
 
 
 **Geocode** converts the place address into its geographical coordinates.
 
 Geocode API is one of Maps Services, provided by Tizen Native Location Framework.
+
 <img src="https://github.com/shulgaalexey/geocoder/blob/master/doc/maps_service.png" alt="Tizen Native Geocode API" style="width:500px"/>
+
 
 To start using Geocode API we are going to:
 
