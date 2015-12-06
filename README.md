@@ -1,13 +1,11 @@
 # How to use Tizen Native Geocode API in 3 simple steps
 
-*The following assumes that you have already basic knowledge in Tizen development:* https://developer.tizen.org/development/getting-started/preface
-
 *Since Tizen 2.4*
 
 
+## What is Geocode?
 
-
-**Geocode** converts the place address into its geographical coordinates.
+**Geocode** translates the place address into its geographical coordinates.
 
 Geocode API is one of Maps Services, provided by Tizen Native Location Framework.
 
@@ -23,21 +21,27 @@ To start using Geocode API we are going to:
 
 
 ## Prerequisites
+*The following assumes that you have already basic knowledge in Tizen development:* https://developer.tizen.org/development/getting-started/preface
+
 Maps Service API requires a security key, issued by Maps Provider.
-In case of HERE, the security key is a concatenation of app_id and app_code, generated on https://developer.here.com/plans/api/consumer-mapping accordingly to your consumer plan.
+
+In case of HERE, the security key is a concatenation of app_id and app_code.
+
+This is generated on https://developer.here.com/plans/api/consumer-mapping accordingly to your consumer plan.
 ```
 “your-security-key” is “app_id/app_code”
 ```
 
 
 ## 1. Create empty Tizen Native Application
-In the IDE create an empty Application and run it (on Emulator or Device)
+In the IDE create an empty Application and run it on emulator or device.
 
 <img src="https://github.com/shulgaalexey/geocoder/blob/master/doc/create_empty_prj.png" alt="Create Empty Tizen Native Project" style="width:500px"/>
 
 When the application started, the "Hello Tizen" label should appear.
 
-NOTE: Get familiar with instructions how to create an empty Application on the page https://developer.tizen.org/development/ -> "Native Application" -> "Creating Your First Tizen Application"
+NOTE: Get familiar with instructions on how to create an empty application at https://developer.tizen.org/development/
+Go to "Native Application" -> "Creating Your First Tizen Application".
 
 
 ## 2. Start Maps Service
@@ -47,7 +51,8 @@ Include the Maps Service API header file:
 #include <maps_service.h>
 ```
 
-NOTE: This allows using all Native Maps Service API. For more details visit https://developer.tizen.org/development/api-references/ and navigate to 2.4 API References -> Native Application ->Mobile Native -> Native API Reference -> Location -> Maps Service
+NOTE: This allows using all Native Maps Service API. For more details visit https://developer.tizen.org/development/api-references/. 
+Navigate to 2.4 API References -> Native Application ->Mobile Native -> Native API Reference -> Location -> Maps Service.
 
 Add a Maps Service handle to the appdata_s structure:
 
@@ -139,10 +144,14 @@ geocode_cb(maps_error_e result, int request_id, int index, int total, maps_coord
 }
 ```
 
-Run the Application
+Run the Application.
 
-At first we will see familiar "Hello Tizen" line, but in a couple of moments it should change to "Geocode is: (55.756970, 37.615020)”, which indicates geocode of the Bolshoi Theatre, Moscow.
+At first we will see the familiar "Hello Tizen" line, but in a couple of moments it should change to "Geocode is: (55.756970, 37.615020)”.
+This would indicate the geocode of the Bolshoi Theatre in Moscow.
+
 
 
 ## Reference
 https://developer.tizen.org/development/tutorials/native-application/location/maps-service#geocode
+
+https://developer.tizen.org/community/tip-tech/how-use-tizen-native-geocode-api-3-simple-steps
