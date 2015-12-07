@@ -14,9 +14,9 @@ Geocode API is one of Maps Services, provided by Tizen Native Location Framework
 
 To start using Geocode API we are going to:
 
-1.	Create empty Tizen Native Application
-2.	Start Maps Service
-3.	Run Geocode
+1. Create empty Tizen Native Application
+2. Start Maps Service
+3. Run Geocode
 
 
 
@@ -32,6 +32,7 @@ This is generated on https://developer.here.com/plans/api/consumer-mapping accor
 “your-security-key” is “app_id/app_code”
 ```
 
+Note: Be sure your deveice or emulator has a valid internet connection.
 
 ## 1. Create empty Tizen Native Application
 In the IDE create an empty Application and run it on emulator or device.
